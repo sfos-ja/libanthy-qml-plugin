@@ -17,6 +17,7 @@ Japanese kana-to-kanji conversion engine
 
 %build
 %configure
+export LD_LIBRARY_PATH="`pwd`/src-main/.libs:`pwd`/src-worddic/.libs:${LD_LIBRARY_PATH}"
 make %{?_smp_mflags}
 
 %install
