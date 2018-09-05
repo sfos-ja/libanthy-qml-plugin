@@ -6,7 +6,7 @@
 2. `sb2 -t SailfishOS-* -m sdk-install -R zypper in gcc make automake libtool`
 3. `mb2 -t SailfishOS-* -s ../anthy.spec build`
 4. `sb2 -t SailfishOS-* -m sdk-build -R`
-5. `export LD_LIBRARY_PATH="$(pwd)/src-{main,worddic}/.libs:${LD_LIBRARY_PATH}"`
+5. `export LD_LIBRARY_PATH="$(pwd)/src-main/.libs:$(pwd)/src-worddic/.libs:${LD_LIBRARY_PATH}"`
 6. `make`
 7. `exit`
 8. `mb2 -t SailfishOS-* -s ../anthy.spec build`
