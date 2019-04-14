@@ -9,7 +9,7 @@ Name:       libanthy-qml-plugin
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Bridge between QML and Anthy
 Version:    0.1
-Release:    1
+Release:    3
 License:    LGPLv2
 URL:        https://github.com/BeholdMyGlory/libanthy-qml-plugin
 Source0:    %{name}-%{version}.tar.gz

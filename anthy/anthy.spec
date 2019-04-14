@@ -1,6 +1,6 @@
 Name: anthy
 Version: 9100h
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Japanese kana-to-kanji conversion engine
 License: LGPLv2
 Source0: http://dl.sourceforge.jp/%{name}/37536/%{name}-%{version}.tar.gz
@@ -17,6 +17,7 @@ Japanese kana-to-kanji conversion engine
 
 %build
 %configure
+export LD_LIBRARY_PATH="`pwd`/src-main/.libs:`pwd`/src-worddic/.libs:${LD_LIBRARY_PATH}"
 make %{?_smp_mflags}
 
 %install
