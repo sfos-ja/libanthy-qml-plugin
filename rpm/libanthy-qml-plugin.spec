@@ -60,7 +60,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/qt5/qml/se/behold/anthy/libjollaanthyplugin.so
-/usr/lib/qt5/qml/se/behold/anthy/qmldir
+%{_libdir}/qt5/qml/se/behold/anthy/libjollaanthyplugin.so
+%{_libdir}/qt5/qml/se/behold/anthy/qmldir
 # >> files
 # << files
