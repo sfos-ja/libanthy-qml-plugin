@@ -1,0 +1,11 @@
+# CLion project dir
+.idea
+
+RPMS
+anthy/anthy-9100h
+
+Makefile
+*.o
+moc_*.cpp
+documentation.list
+*.so

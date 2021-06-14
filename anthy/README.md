@@ -1,15 +1,32 @@
 # Anthy
 
-## How to build anthy in sb2
+## Build Anthy with Sailfish SDK
 
-1. `tar xf anthy-9100h.tar.gz && cd anthy-9100h/`
-2. `sb2 -t SailfishOS-* -m sdk-install -R zypper in gcc make automake libtool`
-3. `mb2 -t SailfishOS-* -s ../anthy.spec build`
-4. `sb2 -t SailfishOS-* -m sdk-build -R`
-5. `export LD_LIBRARY_PATH="$(pwd)/src-main/.libs:$(pwd)/src-worddic/.libs:${LD_LIBRARY_PATH}"`
-6. `make`
-7. `exit`
-8. `mb2 -t SailfishOS-* -s ../anthy.spec build`
+```bash
+# configure SDK
+
+# add SDK tools to $PATH, use your installation path
+PATH=$PATH:~/SailfishOS/bin/
+
+# SDK toolchain version, installed toolchains can be printed by: sfdk tools list
+export OS_VERSION=4.1.0.24
+
+# use one of supported architectures: armv7hl, i486 or aarch64
+export ARCHITECTURE=aarch64
+
+sfdk config "no-fix-version"
+sfdk config "target=SailfishOS-${OS_VERSION}-${ARCHITECTURE}"
+
+# build Anthy package
+tar xf anthy-9100h.tar.gz && cd anthy-9100h
+mkdir rpm
+cp ../anthy.spec rpm
+
+sfdk build --enable-debug
+
+# install package to current SDK target
+sfdk tools exec "SailfishOS-${OS_VERSION}-${ARCHITECTURE}" rpm -if $(pwd)/RPMS/anthy-9100h-2.aarch64.rpm
+```
 
 ## Known issue
 
