@@ -4,9 +4,14 @@
 
 ```bash
 # configure SDK
+
+# add SDK tools to $PATH, use your installation path
 PATH=$PATH:~/SailfishOS/bin/
 
+# SDK toolchain version, installed toolchains can be printed by: sfdk tools list
 export OS_VERSION=4.1.0.24
+
+# use one of supported architectures: armv7hl, i486 or aarch64
 export ARCHITECTURE=aarch64
 
 sfdk config "no-fix-version"
